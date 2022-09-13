@@ -1,0 +1,40 @@
+<div class="col-6 mt-5">
+
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+
+    <%= f.submit %>
+  <% end %>
+
+</div >
+
+
+
+
+
+
+
+
+<%# <div class="col-6 mt-5">
+  <div class="display-flex flex-wrap">
+    <form action="/restaurants" method="post">
+      <label for="name"> Restaurant name</label>
+      <input type="text" placeholder="Name" name="restaurant[name]" class="form-control my-2">
+
+      <label for="address"> Restaurant address</label>
+      <input type="text" placeholder="Address" name="restaurant[address]" class="form-control my-2">
+
+      <label for="phone"> Restaurant phone</label>
+      <input type="text" placeholder="Phone" name="restaurant[phone_number]" class="form-control my-2">
+
+      <label for="category"> Restaurant category</label>
+      <input type="text" placeholder="Category" name="restaurant[category]" class="form-control my-2">
+
+      <input type="submit" value="Save" class="form-control mt-4">
+
+    </form>
+  </div>
+</div> %>

@@ -1,0 +1,13 @@
+<h2>Restaurants</h2>
+
+<% @restaurants.each do |restaurant| %>
+  <ul>
+    <div class="card-body">
+      <li>
+        <%= restaurant.name%>
+      </li>
+      <%# el link to lleva el nombre y la ruta es dinamica, se pasa solo el path y con la variable local rails reconoce el ID  a donde ir %>
+      <%= link_to 'Details', restaurant_path(restaurant) %>
+    </div>
+  </ul>
+<% end %>
