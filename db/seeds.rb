@@ -8,18 +8,34 @@
 
 puts "Cleaning database..."
 Restaurant.destroy_all
+categories = %w[chinese italian japanese french belgian]
 
-dishoom = { name: 'Dishoom', address: '7 Boundary St, London E2 7JE', phone_number: '12132123', category: 'french' }
-Restaurant.create(dishoom)
+# dishoom = { name: 'dishoom', address: '7 Boundary St, London E2 7JE', phone_number: '12132123', category: categories.sample }
+# Restaurant.create(dishoom)
 
-godfather = { name: 'godfather', address: '12 italian St', phone_number: '5552123', category: 'italian' }
-Restaurant.create(godfather)
+# godfather = { name: 'godfather', address: '12 italian St', phone_number: '5552123', category: categories.sample }
+# Restaurant.create(godfather)
 
-dragons = { name: 'dragons', address: 'pekin st. 3241', phone_number: '67830212', category: 'chinese' }
-Restaurant.create(dragons)
+# dragons = { name: 'dragons', address: 'pekin st. 3241', phone_number: '67830212', category: categories.sample }
+# Restaurant.create(dragons)
 
-reddot = { name: 'reddot', address: 'boolevar St,  E2 23E', phone_number: '300004545', category: 'japanese' }
-Restaurant.create(reddot)
+# reddot = { name: 'reddot', address: 'boolevar St,  E2 23E', phone_number: '300004545', category: categories.sample }
+# Restaurant.create(reddot)
 
-typical = { name: 'typical', address: '8 Boundary St, London E5 7', phone_number: '49987852', category: 'belgian' }
-Restaurant.create(typical)
+# typical = { name: 'typical', address: '8 Boundary St, London E5 7', phone_number: '49987852', category: categories.sample }
+# Restaurant.create(typical)
+
+5.times do
+  rest = Restaurant.new(name: Faker::Beer.name,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  )
+  rest.save
+end
+puts "finished!"
+
+# 5.times do
+#   faker_data = Restaurant.new(name: Faker::Beer.name, address: "#{Faker::Address.street_address}", category: categories.sample)
+#   faker_data.save!
+# end
